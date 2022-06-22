@@ -2,7 +2,6 @@
 
 $arrayNumber = [
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    [2,3,4,5,6,7]
 ];
 
 /**
@@ -12,10 +11,10 @@ function newSort(array &$data, string $order = SORT_ASC)
 {
     switch ($order) {
         case SORT_ASC:
-            asort($data[0]);
+            asort($data);
             break;
         case SORT_DESC:
-            arsort($data[0]);
+            arsort($data);
             break;
         default:
             throw new Exception('Unsupported');
@@ -23,7 +22,7 @@ function newSort(array &$data, string $order = SORT_ASC)
 }
 
 try {
-    newSort($arrayNumber, SORT_DESC);
+    newSort($arrayNumber[0], SORT_DESC);
 } catch (Exception $e) {
     echo $e;
 }
